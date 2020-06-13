@@ -11,6 +11,8 @@ Vue.use(Ionic);
 let bus = new Vue
 Vue.prototype.$bus = bus
 
+import axios from 'axios'
+Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
