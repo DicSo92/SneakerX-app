@@ -1,7 +1,7 @@
 <template>
-    <div class="Catalog">
+    <ion-content>
         <ProductsList/>
-    </div>
+    </ion-content>
 </template>
 
 <script>

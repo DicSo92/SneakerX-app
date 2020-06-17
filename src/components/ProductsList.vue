@@ -22,7 +22,7 @@
                         </ion-card-header>
                         <ion-card-content>
                             <ion-text>
-                                <p class="colorsNb" >
+                                <p class="colorsNb">
                                     2 colors
                                 </p>
                             </ion-text>
