@@ -14,7 +14,6 @@
 
                 <ion-content>
                     <ion-vue-router/>
-
                 </ion-content>
 
             </div>
