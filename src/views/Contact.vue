@@ -1,7 +1,7 @@
 <template>
     <ion-content>
-        <iframe width="600"
-                height="450"
+        <iframe width="100%"
+                height="300"
                 frameborder="0" style="border:0"
                 :src="'https://www.google.com/maps/embed/v1/place?key=' + 'AIzaSyDYW1IOQqIaP-2g3vGUXmfh1nMwJBR6-2U' + '&q=19+Rue+Yves+Toudic,+75010+Paris'"
                 allowfullscreen>
@@ -33,6 +33,10 @@
                 <ion-textarea @input="mailMessage = $event.target.value"></ion-textarea>
             </ion-item>
         </ion-list>
+
+        <div class="ion-padding">
+            <ion-button expand="block" type="submit" class="ion-no-margin">Send Message</ion-button>
+        </div>
     </ion-content>
 </template>
 
