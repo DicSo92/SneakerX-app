@@ -11,9 +11,11 @@
                         <ion-title>Inbox</ion-title>
                     </ion-toolbar>
                 </ion-header>
-                <ion-content class="ion-padding">
+
+                <ion-content>
                     <ion-vue-router/>
                 </ion-content>
+
             </div>
         </ion-app>
     </div>
@@ -33,11 +35,5 @@
 
 
 <style lang="scss">
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+
 </style>

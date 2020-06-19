@@ -1,5 +1,8 @@
 <template>
-    <div>Some text in home</div>
+    <ion-content>
+        <div>Some text in home</div>
+
+    </ion-content>
 </template>
 
 <script>
