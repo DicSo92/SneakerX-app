@@ -5,7 +5,8 @@
                 <ion-col size="6" v-for="product in products">
                     <ion-card no-margin
                               text-left
-                              class="productCard full-height">
+                              class="productCard full-height"
+                              @click="goToProduct(product.slug)">
                         <img :src="product.image"/>
                         <ion-card-header class="cardHeader">
                             <ion-card-subtitle>
@@ -22,8 +23,8 @@
                         </ion-card-header>
                         <ion-card-content>
                             <ion-text>
-                                <p class="colorsNb">
-                                    2 colors
+                                <p class="colorsNb ion-text-end">
+                                    {{product.colors.length}} colors
                                 </p>
                             </ion-text>
                         </ion-card-content>
@@ -65,7 +66,11 @@
                         this.loading = false
                     })
                     .catch(error => console.log(error))
-            }
+            },
+            goToProduct(slug) {
+                console.log('go to');
+                this.$router.push({name: 'product', params: {slug: slug}})
+            },
         }
     }
 </script>
@@ -81,8 +86,15 @@
     }
     .cardHeader {
         flex-grow: 1;
+        padding: 8px !important;
     }
     .price {
         margin-top: 8px;
+    }
+    ion-card {
+        border-radius: 0 !important;
+    }
+    ion-card-content {
+        padding: 8px !important;
     }
 </style>

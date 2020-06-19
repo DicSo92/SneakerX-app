@@ -15,6 +15,13 @@ let router = new IonicVueRouter({
       component: Home
     },
     {
+      path: '/contact',
+      props: true,
+      name: 'contact',
+      component: () =>
+          import(/* webpackChunkName: "about" */ '@/views/Contact.vue'),
+    },
+    {
       path: '/catalog',
       props: true,
       name: 'catalog',
@@ -22,11 +29,10 @@ let router = new IonicVueRouter({
           import(/* webpackChunkName: "about" */ '@/views/Catalog.vue'),
     },
     {
-      path: '/contact',
+      path: 'catalog/:slug',
+      name: 'product',
       props: true,
-      name: 'contact',
-      component: () =>
-          import(/* webpackChunkName: "about" */ '@/views/Contact.vue'),
+      component: () => import('@/views//Product.vue'),
     },
     // {
     //   path: '/:bookId',

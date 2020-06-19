@@ -1,5 +1,5 @@
 <template>
-    <ion-menu side="start" content-id="main-content">
+    <ion-menu side="start" content-id="main-content" ref="menu">
         <ion-header>
             <ion-toolbar translucent>
                 <ion-title>Menu</ion-title>
@@ -7,19 +7,19 @@
         </ion-header>
         <ion-content>
             <ion-list>
-                <ion-item>
+                <ion-item @click="goTo('home')">
                     <ion-icon name="home" slot="start"></ion-icon>
                     <ion-label>Home</ion-label>
                 </ion-item>
-                <ion-item>
+                <ion-item @click="goTo('catalog')">
                     <ion-icon name="apps" slot="start"></ion-icon>
                     <ion-label>Catalog</ion-label>
                 </ion-item>
-                <ion-item>
+                <ion-item @click="goTo('brands')">
                     <ion-icon name="pricetag" slot="start"></ion-icon>
                     <ion-label>Brands</ion-label>
                 </ion-item>
-                <ion-item>
+                <ion-item @click="goTo('contact')">
                     <ion-icon name="mail" slot="start"></ion-icon>
                     <ion-label>Contact</ion-label>
                 </ion-item>
@@ -30,7 +30,16 @@
 
 <script>
     export default {
-        name: "Menu"
+        name: "Menu",
+        methods: {
+            closeMenu () {
+                this.$refs.menu.close()
+            },
+            goTo(route) {
+                this.closeMenu()
+                this.$router.push({name: route})
+            }
+        }
     }
 </script>
 
