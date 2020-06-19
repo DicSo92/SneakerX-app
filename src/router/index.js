@@ -29,7 +29,7 @@ let router = new IonicVueRouter({
           import(/* webpackChunkName: "about" */ '@/views/Catalog.vue'),
     },
     {
-      path: 'catalog/:slug',
+      path: '/catalog/:slug',
       name: 'product',
       props: true,
       component: () => import('@/views//Product.vue'),
