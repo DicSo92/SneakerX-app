@@ -32,7 +32,7 @@
         methods: {
             getProduct(slug) {
                 this.loading = true
-                this.$axios.get(`/api/client/products/${slug}`)
+                this.$axios.get(`${process.env.VUE_APP_API_BASE_URL}/api/client/products/${slug}`)
                     .then(response => {
                         console.log(response)
                         this.product = response.data

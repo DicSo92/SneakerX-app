@@ -57,7 +57,7 @@
         },
         methods: {
             getProducts (page, nb) {
-                this.$axios.get(`http://127.0.0.1:8000/api/client/products?page=${page}&nb=${nb}`)
+                this.$axios.get(`${process.env.VUE_APP_API_BASE_URL}/api/client/products?page=${page}&nb=${nb}`)
                     .then(response => {
                         console.log(response)
                         this.products = response.data.data
