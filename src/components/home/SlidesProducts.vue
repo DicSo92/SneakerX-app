@@ -14,11 +14,12 @@
                         <ion-row class="rowContainer">
                             <ion-col size="4" class="forecastItem" v-for="(product, index) in threeProducts">
                                 <ion-card text-left
-                                          class="productCard">
+                                          class="productCard"
+                                          @click="goToProduct(product.slug)">
                                     <img :src="product.image"/>
                                     <ion-card-header class="cardHeader">
                                         <ion-card-subtitle>
-                                            {{ product.name | truncate(15, '...') }}
+                                            {{ product.name | truncate(20, '...') }}
                                         </ion-card-subtitle>
                                     </ion-card-header>
                                 </ion-card>
@@ -73,7 +74,11 @@
                         this.loading = false
                     })
                     .catch(error => console.log(error))
-            }
+            },
+            goToProduct(slug) {
+                console.log('go to');
+                this.$router.push({name: 'product', params: {slug: slug}})
+            },
         },
     }
 </script>

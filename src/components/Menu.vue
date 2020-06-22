@@ -15,9 +15,9 @@
                     <ion-icon name="apps" slot="start"></ion-icon>
                     <ion-label>Catalog</ion-label>
                 </ion-item>
-                <ion-item @click="goTo('brands')">
-                    <ion-icon name="pricetag" slot="start"></ion-icon>
-                    <ion-label>Brands</ion-label>
+                <ion-item @click="goTo('news')">
+                    <ion-icon name="document" slot="start"></ion-icon>
+                    <ion-label>News</ion-label>
                 </ion-item>
                 <ion-item @click="goTo('contact')">
                     <ion-icon name="mail" slot="start"></ion-icon>
