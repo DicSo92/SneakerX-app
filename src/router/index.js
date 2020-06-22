@@ -15,26 +15,35 @@ let router = new IonicVueRouter({
       component: Home
     },
     {
+      path: '/contact',
+      name: 'contact',
+      component: () =>
+          import(/* webpackChunkName: "about" */ '@/views/Contact.vue'),
+    },
+    {
       path: '/catalog',
-      props: true,
       name: 'catalog',
       component: () =>
           import(/* webpackChunkName: "about" */ '@/views/Catalog.vue'),
     },
-    // {
-    //   path: '/:bookId',
-    //   props: true,
-    //   name: 'book',
-    //   component: () =>
-    //       import(/* webpackChunkName: "about" */ '@/views/Book.vue'),
-    // },
-    // {
-    //   path: '/:bookId/viewer',
-    //   props: true,
-    //   name: 'viewer',
-    //   component: () =>
-    //       import(/* webpackChunkName: "about" */ '@/views/Viewer.vue'),
-    // },
+    {
+      path: '/catalog/:slug',
+      name: 'product',
+      props: true,
+      component: () => import('@/views/Product.vue'),
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: () =>
+          import(/* webpackChunkName: "about" */ '@/views/News.vue'),
+    },
+    {
+      path: '/news/:slug',
+      name: 'actuality',
+      props: true,
+      component: () => import('@/views/Actuality.vue'),
+    },
   ]
 });
 export default router

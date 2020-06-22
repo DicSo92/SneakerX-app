@@ -8,12 +8,21 @@
                         <ion-buttons slot="start">
                             <ion-menu-button></ion-menu-button>
                         </ion-buttons>
-                        <ion-title>Inbox</ion-title>
+                        <ion-title>SneakerX</ion-title>
                     </ion-toolbar>
                 </ion-header>
-                <ion-content class="ion-padding">
+
+                <ion-content>
                     <ion-vue-router/>
                 </ion-content>
+
+                <ion-footer class="ion-no-border">
+                    <ion-toolbar>
+                        <ion-button expand="full" color="dark">
+                            - GO TO SHOP -
+                        </ion-button>
+                    </ion-toolbar>
+                </ion-footer>
             </div>
         </ion-app>
     </div>
@@ -33,11 +42,5 @@
 
 
 <style lang="scss">
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+
 </style>
