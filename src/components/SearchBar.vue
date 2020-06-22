@@ -1,8 +1,26 @@
 <template>
     <transition name="slideUp">
-        <ion-searchbar animated class="searchbar"
-                       v-show="displaySearchBar">
-        </ion-searchbar>
+        <div class="searchbar" v-show="displaySearchBar">
+            <ion-searchbar animated class="searchbar"
+                           ref="searchbar"
+                           @ionChange="getSearch($event.target.value)"
+                           debounce="500">
+            </ion-searchbar>
+
+            <ion-list class="searchProducts" v-if="searchProducts">
+                <ion-item v-for="product in searchProducts" @click="goToProduct(product.slug)">
+                    <ion-avatar slot="start">
+                        <img :src="product.image">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>{{product.name}}</h2>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+            <ion-list-header v-if="searchProducts">
+                {{totalProducts}} Results
+            </ion-list-header>
+        </div>
     </transition>
 </template>
 
@@ -14,9 +32,39 @@
         ],
         data() {
             return {
-                searchProducts: null
+                searchProducts: null,
+                totalProducts: null,
+
+                loading: false
             }
         },
+        methods: {
+            getSearch(search) {
+                if (search) {
+                    this.loading = true
+
+                    this.$axios.get(`${process.env.VUE_APP_API_BASE_URL}/api/client/products/search/${search}?nb=5`)
+                        .then(response => {
+                            console.log(response)
+                            this.searchProducts = response.data.data
+                            this.totalProducts = response.data.total
+
+                            this.loading = false
+                        })
+                        .catch(error => {
+                            console.log(error)
+                            this.searchProducts = null
+                        })
+                }
+            },
+            goToProduct(slug) {
+                console.log('go to');
+                this.$router.push({name: 'product', params: {slug: slug}})
+                this.$emit('toggleDisplaySearchBar')
+                this.$refs.searchbar.value = ''
+                this.searchProducts = null
+            },
+    }
     }
 </script>
 
@@ -37,5 +85,9 @@
 
     .searchbar {
         background-color: white;
+    }
+
+    .searchProducts {
+        margin-bottom: 0;
     }
 </style>

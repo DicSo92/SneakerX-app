@@ -3,7 +3,7 @@
         <ion-app>
             <Menu/>
             <div class="ion-page" id="main-content">
-                <ion-header>
+                <ion-header style="position: relative;" ref="mainHeader">
                     <ion-toolbar color="tertiary">
                         <ion-buttons slot="start">
                             <ion-menu-button></ion-menu-button>
@@ -16,11 +16,12 @@
                         </ion-buttons>
                     </ion-toolbar>
 
-                    <SearchBar :displaySearchBar="displaySearchBar"/>
+                    <SearchBar :displaySearchBar="displaySearchBar"
+                               @toggleDisplaySearchBar="displaySearchBar = !displaySearchBar"/>
 
                 </ion-header>
 
-                <ion-content class="main-container">
+                <ion-content class="main-container" :style="'top:'+headerHeight+'px;'">
                     <ion-vue-router/>
                 </ion-content>
 
@@ -48,8 +49,16 @@
         },
         data() {
             return {
-                displaySearchBar: false
+                displaySearchBar: false,
+                headerHeight: 44,
             }
+        },
+        mounted() {
+            // this.$nextTick(() => {
+            //     console.log(this.$refs.mainHeader.offsetHeight)
+            //     this.headerHeight = this.$refs.mainHeader.offsetHeight
+            // })
+
         },
         methods: {
             goToWebSite() {
