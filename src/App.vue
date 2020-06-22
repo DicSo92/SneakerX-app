@@ -8,7 +8,7 @@
                         <ion-buttons slot="start">
                             <ion-menu-button></ion-menu-button>
                         </ion-buttons>
-                        <ion-title>Inbox</ion-title>
+                        <ion-title>SneakerX</ion-title>
                     </ion-toolbar>
                 </ion-header>
 
@@ -16,6 +16,13 @@
                     <ion-vue-router/>
                 </ion-content>
 
+                <ion-footer class="ion-no-border">
+                    <ion-toolbar>
+                        <ion-button expand="full" color="dark">
+                            - GO TO SHOP -
+                        </ion-button>
+                    </ion-toolbar>
+                </ion-footer>
             </div>
         </ion-app>
     </div>

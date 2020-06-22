@@ -82,7 +82,6 @@
     .productCard {
         display: flex;
         flex-direction: column;
-
     }
     .cardHeader {
         flex-grow: 1;

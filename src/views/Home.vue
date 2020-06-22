@@ -12,14 +12,24 @@
                 <img src="https://www.prodirectsoccer.com/siteimages/responsive/desktop/puma/evospeed/evospeed-turbulence/billboards/Banner1_mobile_fr.jpg" alt="">
             </ion-slide>
         </ion-slides>
-        <div>Some text in home</div>
+
+        <SlidesProducts/>
+
+        <NewsList/>
 
     </ion-content>
 </template>
 
 <script>
+    import NewsList from '@/components/home/NewsList.vue'
+    import SlidesProducts from '@/components/home/SlidesProducts.vue'
+
     export default {
         name: 'Home',
+        components: {
+            NewsList,
+            SlidesProducts
+        },
         data() {
             return {
                 slideOpts: {
@@ -40,3 +50,7 @@
         }
     }
 </script>
+
+<style lang="scss">
+
+</style>
