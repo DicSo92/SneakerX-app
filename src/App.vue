@@ -15,11 +15,9 @@
                             </ion-button>
                         </ion-buttons>
                     </ion-toolbar>
-                    <transition name="slideUp">
-                        <ion-searchbar animated class="searchbar"
-                                       v-show="displaySearchBar">
-                        </ion-searchbar>
-                    </transition>
+
+                    <SearchBar :displaySearchBar="displaySearchBar"/>
+
                 </ion-header>
 
                 <ion-content class="main-container">
@@ -39,15 +37,16 @@
 </template>
 
 <script>
-    // @ is an alias to /src
     import Menu from '@/components/Menu.vue'
+    import SearchBar from '@/components/SearchBar.vue'
 
     export default {
         name: 'App',
         components: {
-          Menu
+            Menu,
+            SearchBar
         },
-        data () {
+        data() {
             return {
                 displaySearchBar: false
             }
@@ -62,21 +61,8 @@
 
 
 <style lang="scss">
-    ion-searchbar {
-        padding: 6px 10px !important;
-    }
-
-    .slideUp-enter-active, .slideUp-leave-active {
-        transition: all .5s;
-    }
-    .slideUp-enter, .slideUp-leave-to /* .fade-leave-active below version 2.1.8 */ {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
     .main-container {
         position: absolute;
     }
-    .searchbar {
-        background-color: white;
-    }
+
 </style>
