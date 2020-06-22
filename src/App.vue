@@ -18,7 +18,7 @@
 
                 <ion-footer class="ion-no-border">
                     <ion-toolbar>
-                        <ion-button expand="full" color="dark">
+                        <ion-button expand="full" color="dark" @click="goToWebSite()">
                             - GO TO SHOP -
                         </ion-button>
                     </ion-toolbar>
@@ -36,6 +36,11 @@
         name: 'App',
         components: {
           Menu
+        },
+        methods: {
+            goToWebSite() {
+                window.open(`${process.env.VUE_APP_WEB_URL}/`, '_blank');
+            }
         }
     }
 </script>
