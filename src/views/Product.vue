@@ -61,7 +61,11 @@
                     <p class="description">{{product.description}}</p>
                 </ion-text>
 
-                <ion-button expand="full" color="light" style="border: solid grey 1px;">Shop Now</ion-button>
+                <ion-button expand="full" color="light"
+                            style="border: solid grey 1px;"
+                            @click="goToWebProduct(product.slug)">
+                    Shop Now
+                </ion-button>
             </div>
         </div>
     </ion-content>
@@ -91,6 +95,9 @@
                     .catch(error => {
                         console.log(error)
                     })
+            },
+            goToWebProduct(slug) {
+                window.open(`${process.env.VUE_APP_WEB_URL}/catalog/${slug}`, '_blank');
             }
         }
     }

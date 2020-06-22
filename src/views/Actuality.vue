@@ -1,5 +1,11 @@
 <template>
     <ion-content>
+        <div class="breadcrumb">
+            <p margin>
+                <span class="breadLink">Home</span> /
+                <span class="breadLink">News</span>
+            </p>
+        </div>
         <div class="actuality" v-if="actuality">
             <img :src="actuality.image" alt="">
             <div class="" margin>
@@ -56,6 +62,12 @@
 </script>
 
 <style scoped lang="scss">
+    .breadcrumb {
+        font-size: 14px;
+    }
+    .breadLink {
+        text-decoration: underline;
+    }
     .subtitle {
         background-color: black;
         color: white;

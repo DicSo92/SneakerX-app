@@ -6,7 +6,7 @@
                 <span class="breadLink">News</span>
             </p>
         </div>
-        <CardActuality v-for="actuality in news" :actuality="actuality"/>
+        <CardActuality v-for="actuality in news" :actuality="actuality" :key="actuality.id"/>
     </ion-content>
 </template>
 
