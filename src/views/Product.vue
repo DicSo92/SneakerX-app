@@ -25,7 +25,7 @@
                 <ion-slide>
                     <img :src="product.image" alt="">
                 </ion-slide>
-                <ion-slide v-for="imgLink in product.images">
+                <ion-slide v-for="(imgLink, index) in product.images" :key="index">
                     <img :src="imgLink" alt="">
                 </ion-slide>
             </ion-slides>
@@ -47,7 +47,7 @@
                     <p no-margin class="titles ion-margin-top">{{product.sizes.length}} Sizes Available :</p>
                 </ion-text>
                 <ion-row class="ion-align-items-center sizes">
-                    <ion-col size="2" class="" v-for="size in product.sizes">
+                    <ion-col size="2" class="" v-for="(size, index) in product.sizes" :key="index">
                         <div>
                             <p class="ion-text-center">{{size.size}}</p>
                         </div>
