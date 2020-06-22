@@ -58,7 +58,6 @@
             //     console.log(this.$refs.mainHeader.offsetHeight)
             //     this.headerHeight = this.$refs.mainHeader.offsetHeight
             // })
-
         },
         methods: {
             goToWebSite() {
