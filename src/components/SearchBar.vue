@@ -4,11 +4,14 @@
             <ion-searchbar animated class="searchbar"
                            ref="searchbar"
                            @ionChange="getSearch($event.target.value)"
+                           @keyup.enter="goToSearch($event.target.value)"
                            debounce="500">
             </ion-searchbar>
 
             <ion-list class="searchProducts" v-if="searchProducts">
-                <ion-item v-for="product in searchProducts" @click="goToProduct(product.slug)">
+                <ion-item v-for="product in searchProducts"
+                          @click="goToProduct(product.slug)"
+                          :key="product.id">
                     <ion-avatar slot="start">
                         <img :src="product.image">
                     </ion-avatar>
@@ -55,6 +58,8 @@
                             console.log(error)
                             this.searchProducts = null
                         })
+                } else {
+                    this.searchProducts = null
                 }
             },
             goToProduct(slug) {
@@ -64,7 +69,14 @@
                 this.$refs.searchbar.value = ''
                 this.searchProducts = null
             },
-    }
+            goToSearch(search) {
+                if(this.totalProducts) {
+                    console.log(search)
+                    this.$router.push({name: 'search', query: {search: search, nb: this.totalProducts}})
+                    this.$emit('toggleDisplaySearchBar')
+                }
+            }
+        }
     }
 </script>
 

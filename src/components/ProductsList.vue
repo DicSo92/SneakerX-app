@@ -39,6 +39,8 @@
                     loading-text="Loading more data...">
             </ion-infinite-scroll-content>
         </ion-infinite-scroll>
+
+        <div class="footerTransparent"></div>
     </div>
 </template>
 

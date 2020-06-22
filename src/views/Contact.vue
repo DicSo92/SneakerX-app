@@ -37,6 +37,8 @@
         <div class="ion-padding">
             <ion-button expand="block" type="submit" class="ion-no-margin">Send Message</ion-button>
         </div>
+
+        <div class="footerTransparent"></div>
     </ion-content>
 </template>
 

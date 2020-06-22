@@ -68,6 +68,8 @@
                 </ion-button>
             </div>
         </div>
+
+        <div class="footerTransparent"></div>
     </ion-content>
 </template>
 

@@ -17,6 +17,7 @@
 
         <NewsList/>
 
+        <div class="footerTransparent"></div>
     </ion-content>
 </template>
 

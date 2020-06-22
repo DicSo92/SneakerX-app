@@ -72,5 +72,8 @@
     .main-container {
         position: absolute;
     }
-
+    .footerTransparent {
+        min-height: 100px;
+        width: 100%;
+    }
 </style>

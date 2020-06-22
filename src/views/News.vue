@@ -1,19 +1,24 @@
 <template>
     <ion-content>
-        <div class="breadcrumb">
-            <p margin>
-                <span class="breadLink">Home</span> /
-                <span class="breadLink">News</span>
-            </p>
-        </div>
-        <CardActuality v-for="actuality in news" :actuality="actuality" :key="actuality.id"/>
+        <div class="">
+            <div class="breadcrumb">
+                <p margin>
+                    <span class="breadLink">Home</span> /
+                    <span class="breadLink">News</span>
+                </p>
+            </div>
+            <CardActuality v-for="actuality in news" :actuality="actuality" :key="actuality.id"/>
 
-        <ion-infinite-scroll threshold="100px" ref="infiniteScroll" v-show="news && news.length > 0">
-            <ion-infinite-scroll-content
-                    loading-spinner="bubbles"
-                    loading-text="Loading more data...">
-            </ion-infinite-scroll-content>
-        </ion-infinite-scroll>
+            <ion-infinite-scroll threshold="100px" ref="infiniteScroll" class="infScroll"
+                                 v-show="news && news.length > 0">
+                <ion-infinite-scroll-content
+                        loading-spinner="bubbles"
+                        loading-text="Loading more data...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+
+            <div class="footerTransparent"></div>
+        </div>
     </ion-content>
 </template>
 
@@ -89,5 +94,8 @@
     }
     .breadLink {
         text-decoration: underline;
+    }
+    .infScroll, infinite-loading {
+        bottom: 100px;
     }
 </style>
