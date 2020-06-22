@@ -18,7 +18,6 @@
 
                     <SearchBar :displaySearchBar="displaySearchBar"
                                @toggleDisplaySearchBar="displaySearchBar = !displaySearchBar"/>
-
                 </ion-header>
 
                 <ion-content class="main-container" :style="'top:'+headerHeight+'px;'">

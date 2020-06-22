@@ -20,7 +20,7 @@
                     </ion-label>
                 </ion-item>
             </ion-list>
-            <ion-list-header v-if="searchProducts">
+            <ion-list-header v-if="searchProducts" class="nbResults">
                 {{totalProducts}} Results
             </ion-list-header>
         </div>
@@ -101,5 +101,9 @@
 
     .searchProducts {
         margin-bottom: 0;
+    }
+
+    .nbResults {
+        border-bottom: solid black 1px;
     }
 </style>
