@@ -28,7 +28,7 @@
         data () {
             return {
                 news: null,
-                nbPerPage: 8,
+                nbPerPage: 6,
 
                 page: 1,
                 last_page: null,
