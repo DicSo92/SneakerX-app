@@ -4,7 +4,7 @@
             <p margin>
                 <span class="breadLink">Home</span> /
                 <span class="breadLink">Catalog</span> /
-                <span class="breadLink">{{brandSelected}}</span>
+                <span class="breadLink">{{brandSelectedName}}</span>
             </p>
         </div>
         <div class="brandsList">
@@ -43,6 +43,14 @@
         },
         created() {
             this.getBrands()
+        },
+        computed: {
+            brandSelectedName() {
+                if (this.brandSelected === 'All') {
+                    return this.brandSelected
+                }
+                return this.brands.find(brand => brand.id === Number(this.brandSelected) ).name
+            }
         },
         methods: {
             getBrands() {
