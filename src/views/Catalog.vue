@@ -15,14 +15,14 @@
                     <ion-label>All</ion-label>
                     <ion-icon name="call"></ion-icon>
                 </ion-segment-button>
-                <ion-segment-button :value="brand.name" layout="icon-start" v-for="brand in brands">
+                <ion-segment-button :value="brand.id" layout="icon-start" v-for="brand in brands">
                     <ion-label>{{brand.name}}</ion-label>
                     <ion-icon name="call"></ion-icon>
                 </ion-segment-button>
             </ion-segment>
         </div>
 
-        <ProductsList />
+        <ProductsList :brandSelected="brandSelected"/>
     </ion-content>
 </template>
 
