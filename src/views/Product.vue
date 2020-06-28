@@ -68,6 +68,8 @@
                 </ion-button>
             </div>
         </div>
+
+        <div class="footerTransparent"></div>
     </ion-content>
 </template>
 
@@ -82,6 +84,11 @@
         },
         created() {
             this.getProduct(this.$route.params.slug)
+        },
+        beforeRouteUpdate (to, from, next) {
+            // Prevent routing problem
+            this.getProduct(to.params.slug)
+            next()
         },
         methods: {
             getProduct(slug) {

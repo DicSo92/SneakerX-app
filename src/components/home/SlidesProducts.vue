@@ -92,14 +92,15 @@
         padding-right: 0;
     }
     .productCard {
-        /*height: 100%;*/
+        min-height: 95%;
     }
     .gridForecast {
         padding-top: 0;
         padding-bottom: 10px;
     }
     ion-card {
-        margin: 4px
+        margin: 4px;
+        border-radius: 0 !important;
     }
     .cardHeader {
         padding: 8px !important;
