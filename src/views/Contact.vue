@@ -60,25 +60,34 @@
         },
         methods: {
             sendMail () {
-                this.$axios.post(`${process.env.VUE_APP_API_BASE_URL}/api/client/contact`, {
-                    firstname: this.firstname,
-                    lastname: this.lastname,
-                    email: this.email,
-                    mailObject: this.mailObject,
-                    mailMessage: this.mailMessage,
-                }, {
-                    withCredentials: true,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                })
+                this.$axios.get(`${process.env.VUE_APP_API_BASE_URL}/sanctum/csrf-cookie`)
                     .then(response => {
-                        console.log(response);
+                        console.log(response)
+                        this.$axios.post(`${process.env.VUE_APP_API_BASE_URL}/api/client/contact`, {
+                            firstname: this.firstname,
+                            lastname: this.lastname,
+                            email: this.email,
+                            mailObject: this.mailObject,
+                            mailMessage: this.mailMessage,
+                        }, {
+                            withCredentials: true,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            },
+                        })
+                            .then(response => {
+                                console.log(response);
 
+                            })
+                            .catch(error => {
+                                console.log(error);
+                            })
                     })
                     .catch(error => {
-                        console.log(error);
+                        console.log(error.message)
+
                     })
+
             }
         }
     }
